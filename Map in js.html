@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapp</title>
+</head>
+
+<body>
+    <h1>MAP METHOD IN JAVASCRIPT</h1>
+    <h2>Creating a Map from an Array</h2>
+    <h4>
+        <div id="Mapp1"></div>
+    </h4>
+    <h4>
+        <div id="Mapp2"></div>
+    </h4>
+    <h4>
+        <div id="Mapp3"></div>
+    </h4>
+    <h4>
+        <div id="Mapp4"></div>
+    </h4>
+    <h4>
+        <div id="Mapp5"></div>
+    </h4>
+    <h4>
+        <div id="Mapp6"></div>
+    </h4>
+    <h4>
+        <div id="Mapp7"></div>
+    </h4>
+    <script>
+        // MAP .get
+        const marks = new Map([
+            ["qasim", 200],
+            ["jasem", 300],
+            ["majid", 400],
+            ["kamran", 500],
+        ])
+        const total = marks.get('qasim');
+        console.log([total]);
+        document.getElementById('Mapp1').innerHTML = marks.get('qasim')
+            + '<br>' + marks.set('qasim');
+
+        // Map .Set()
+
+        const all = new Map();
+
+        // Sets
+        all.set('car1', 1);
+        all.set('car2', 2);
+        all.set('car3', 3);
+        all.set('car4', 4);
+        all.set('car5', 5);
+
+        console.log(
+            all.get('car2'),
+            all.set('car2')
+        );
+
+
+        document.getElementById('Mapp2').innerHTML = all.get('car1') + '<br>' + all.set('car2');
+
+
+
+        // Create a Map
+        const fruits = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        // now we change apple number
+        fruits.set("apples", 600);
+
+        console.log(fruits.get("apples"))
+        document.getElementById("Mapp3").innerHTML = fruits.get("apples");
+
+        // Create a Map
+        const fruitsD = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        console.log(fruitsD.size)
+        // Delete an Element
+        fruitsD.delete("apples");
+
+        console.log(fruitsD.size)
+
+        document.getElementById("Mapp4").innerHTML = fruitsD.size;
+
+        //Using Map.has()
+        // Create a Map
+        const fruitsH = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        console.log(fruitsH.has("apples"))
+        document.getElementById("Mapp5").innerHTML = fruitsH.has("apples");
+
+
+
+
+        // first return true console.loge()
+        // when delete apples propertys in array return false 
+        const fruitsDH = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        console.log(fruitsDH.has("apples"));
+        // Delete an Element
+        fruitsDH.delete("apples");
+        console.log(fruitsDH.has("apples"));
+        document.getElementById("Mapp5").innerHTML = fruitsDH.has("apples");
+
+        // Using Map.forEach()
+        const students = new Map([
+            ['ishar', 11],
+            ['kashif', 22],
+            ['hilall', 33],
+            ['yahya', 44]
+        ]);
+        let text = '';
+        students.forEach(function (value, key) {
+            text += key + ' :: ' + value + '<br>'
+        });
+        console.log(text);
+        document.getElementById("Mapp6").innerHTML = text;
+
+        const students1 = new Map([
+            ['ishar', 11],
+            ['kashif', 22],
+            ['hilall', 33],
+            ['yahya', 44]
+        ]);
+        let text1 = '';
+        for (let i = 0; i < students1.entries; i++) {
+            text1 += [i];
+            
+        }
+
+    </script>
+</body>
+
+</html>

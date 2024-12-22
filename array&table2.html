@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js array forEach</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+  <script>
+    // var body= document.getElementsByTagName("body")[0];
+    //var ourTable = document.createElement("table");
+    //var ourTableBody = document.createElement("tbody");
+    //for (var i = 0; i < 200; i++) {
+    // var row = document.createElement("tr");
+    //for (var j = 0; j < 10; j++) {
+    //  var cell = document.createElement("td");
+    // var cellText = document.createTextNode("I AM //" + i + ", ISHAR KHNA " + j);
+    // cell.appendChild(cellText);
+    //  row.appendChild(cell);
+    // }
+    // ourTableBody.appendChild(row);
+    //  }
+    // ourTable.appendChild(ourTableBody);
+    //body.appendChild(ourTable);
+    // ourTable.setAttribute("border", "2");
+
+
+    var body = document.getElementsByTagName("body")[0];
+    var ourTable = document.createElement("table");
+    var ourTableBody = document.createElement("tbody");
+
+    for (var i = 0; i < 50; i++) {
+      var row = document.createElement("tr");
+      for (var j = 0; j < 8; j++) {
+        var cell = document.createElement("th");
+        var cellText = document.createTextNode ("I AM FROM" + i + ", SWABI " + j);
+        cell.appendChild(cellText)
+        row.appendChild(cell);
+      }
+      ourTableBody.appendChild(row);
+    }
+    ourTable.appendChild(ourTableBody);
+    body.appendChild(ourTable);
+    ourTable.setAttribute("border" , "10");
+
+
+    //const x = ["apple", "mango", "ambraila", "alipaint", "dog", "aroflan"];
+    //let t = "<ul>";
+   // x.forEach(myFunction);
+   // t += "</ul>";
+   // document.getElementById("demo").innerHTML = t;
+    //function myFunction(value) {
+     // t += "<li>" + value + "</li>";
+    //};
+     //let names = [ 'sddam','khan','shahsawar','khan','imamhusain'];
+    // names.forEach((names)=>{
+      //   document.write(names + '<br>' + ' this is a good exfrections.');
+    // })
+       // let number = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+        //let name = ['asad', 'khan', 'shahzeeb', 'ahmad',];
+        //number.forEach((m, a, number) => {
+        //    document.write(m, a, number)
+       // });
+     //document.write(name);
+    //document.write(number);
+  </script>
+</body>
+
+</html>

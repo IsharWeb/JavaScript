@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage API
+    </title>
+
+</head>
+
+<body>
+    <button onclick="myname()">Click Me
+    </button>
+    <hr>
+    <div id="myid"></div>
+    <script>
+        function myname() {
+            localStorage.setItem("Name", "Ishar Khan");
+            sessionStorage.setItem("Villge", "Shewa");
+            let get = localStorage.getItem("Name");
+            let session = sessionStorage.getItem("Villge");
+            document.getElementById('myid').innerHTML = get + " " + session;
+        }
+    </script>
+</body>
+
+</html

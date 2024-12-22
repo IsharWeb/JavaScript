@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEvenListener js</title>
+</head>
+<style>
+    
+    .buttonss{
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #butt1,
+    #butt2,
+    #butt3,
+    #butt4 {
+        height: 20%;
+        width: 15%;
+        padding: 2%;
+        FONT-SIZE: 2em;
+        background: chartreuse;
+        border-radius: 50%;
+        border: 3px dashed red;
+        font-weight: 700;
+        color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #myid {
+        color: red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+    }
+</style>
+
+<body>
+    <div class="container">
+        
+        <h3> How to use addEvenListener() in JavaScript</h3>
+        <div class="buttonss">
+            <button type="button" id="butt1">Click / </button>
+            <button type="button" id="butt2">Click X </button>
+            <button type="button" id="butt3">Click + </button>
+            <button type="button" id="butt4">Click - </button>
+        </div>
+            <h1><b>
+            <div id="myid"></div>
+        </b></h1>
+        </div>
+        <script>
+            
+            
+            let a = Number(prompt('enter a number'));
+        let b = Number(prompt('enter a number'));
+
+        document.getElementById("butt1").addEventListener("click", function () {
+            document.getElementById("myid").innerHTML = "Division = " + Number(a / b);
+        });
+
+        document.getElementById("butt2").addEventListener("click", function () {
+            document.getElementById("myid").innerHTML = "Multiply = " + Number(a * b);
+        });
+        document.getElementById("butt3").addEventListener("click", function () {
+            document.getElementById("myid").innerHTML = "Sum  = " + Number(a + b);
+        });
+        document.getElementById("butt4").addEventListener("click", function () {
+            document.getElementById("myid").innerHTML = "Negative  = " + Number(a - b);
+        });
+
+
+    </script>
+</body>
+
+</html>

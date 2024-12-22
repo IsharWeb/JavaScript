@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for of</title>
+</head>
+
+<body>
+    <h1>(forof) in javascript</h1>
+    <div id="of1"></div>
+    <div id="of2"></div>
+    <div id="of3"></div>
+    <div id="of4"></div>
+    <script>
+        let name = ("ishar", "khan", "hello");
+        text = "";
+        for (let a of name) {
+            text += a + "<br>";
+            console.log([a]);
+            document.getElementById("of1").innerHTML = text;
+        };
+
+
+        //for of in array
+        let names = ["a", "b", "c", "d"];
+        let text1 = "";
+        for (const a of names) {
+            if (a === 2) {
+                alert("oh this is not aaaa");
+            } else {
+                alert("oh this is not aaaa");
+            }
+            text1 += a + " , ";
+            console.log([a]);
+            document.getElementById("of2").innerHTML = text1;
+        }
+
+
+        // forof Iterate over a Set
+        const iterater = new Set(["aa", "bb", "cc", "dd"]);
+        let text2 = " ";
+        for (const a of iterater) {
+            text2 += a + " ";
+            console.log([a]);
+            document.getElementById("of3").innerHTML = text2;
+
+        }
+        // forof Iterate over a Map
+        const m = new Map([
+            ["a", 500],
+            ["b", 200],
+            ["c", 300],
+            ["d", 600]
+        ]);
+        let text3 = " ";
+        for (const b of m) {
+            text3 += b + " <br> ";
+            console.log([b]);
+            document.getElementById("of4").innerHTML = text3;
+
+        }
+
+    </script>
+</body>
+
+</html>

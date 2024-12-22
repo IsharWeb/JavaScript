@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xml js</title>
+</head>
+
+<body>
+    <h2>XML js</h2>
+    <button type="button" onclick="mydata()">Show Data</button>
+    <div id="myid"></div>
+    <script>
+        function mydata() {
+            const xml2 = new XMLHttpRequest();
+            xml2.onload = function () {
+                document.getElementById('myid').innerHTML = `<h2>My GIthub Header Response</h2>${this.getAllResponseHeaders()} 
+                <h2>My GItub Text Response</h2>  ${this.responseText}
+                `;
+            }
+            xml2.open('GET', 'https://api.github.com/users/Ishardev2000');
+            xml2.send();
+        }
+    </script>
+</body>
+
+</html>

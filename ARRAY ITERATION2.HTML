@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <H2>JAVASCRIOT FOR-EACH() </H2>
+    <div id="hi"></div>
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("hi").innerHTML = txt;
+        function myFunction(value, index, array) {
+            txt += value + '<br>';
+        }
+
+    </script>
+</body>
+
+</html>

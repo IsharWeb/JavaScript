@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onmouseover js</title>
+</head>
+
+<body>
+    <h2>How to use Onmouseover ittribute In JavaScript</h2>
+    <div onmouseover="overm(this)" onmouseout="Outm(this)"
+        style="background-color:#ff1e00;width:120px;height:80px;padding:20px;">
+        <h4>Hi I am Muhammad Ishar</h4>
+
+    </div>
+    <div onmousedown="mDown(this)" onmouseup="mUp(this)"
+    style="background-color:#ff1e00;width:120px;height:80px;padding:20px;">
+        Click Me</div>
+    <script>
+        function overm(obj) {
+            obj.innerHTML = "And Your Name";
+            obj.style.backgroundColor = "black"
+            obj.style.color = "white"
+            obj.style.fontSize = "1.4em"
+        }
+        function Outm(obj) {
+            obj.innerHTML = "My Name is Ishar";
+            obj.style.backgroundColor = "blue"
+            obj.style.color = "red"
+            obj.style.fontSize = "1.4em"
+        }
+
+
+        function mDown(obj2) {
+            obj2.style.backgroundColor = "#1ec5e5";
+            obj2.innerHTML = "Release Me";
+        }
+
+        function mUp(obj2) {
+            obj2.style.backgroundColor = "#D94A38";
+            obj2.innerHTML = "Thank You";
+        }
+    </script>
+</body>
+
+</html>

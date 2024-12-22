@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logical Oprators</title>
+</head>
+
+<body>
+    <h2>Logital Oprater ( && , || , ! ) .</h2>
+    <script>
+        let a = 5;
+        let b = 3;
+        // logical AND ( && ) 
+        let cond1 = a > b; // true
+        let cond2 = a === 5; // true 
+        let cond3 = a > b; // true
+        let cond4 = a === b; // false 
+        console.log("cond1 && cond2 =", cond1 && cond2);
+        console.log("cond3 && cond4 =", cond3 && cond4);
+        // logical OR ( || )
+        let c = 5;
+        let d = 3;
+        let cond5 = c > d; // true
+        let cond6 = c === 5; // true 
+        let cond7 = c < d; // false
+        let cond8 = c === d; // false 
+        console.log("cond5 || cond6 =", cond5 || cond6);
+        console.log("cond7 || cond8 =", cond7 || cond8);
+
+        //Logical NOT ( ! )
+        let e = 5;
+        let f = 3;
+        let cond9 = e > f; // true
+        let cond10 = e === 5; // true (return false);
+        let cond11 = e < f; // false
+        let cond12 = e === f; // false (return true);
+        console.log(" cond9 !() cond10 = " , !(cond9 , cond10));
+        console.log(" cond11 !() cond12 = " , !(cond11 , cond12));
+    </script>
+</body>
+
+</html>

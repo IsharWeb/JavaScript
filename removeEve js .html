@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>removeEventListener()</title>
+</head>
+<style>
+    #mydiv {
+      background-color: rgb(108 139 23);
+      border: 1px solid;
+      padding: 50px;
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+    }
+    </style>
+<body>
+    <div id="mydiv">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus repudiandae a consequuntur incidunt doloremque alias quisquam, adipisci distinctio quis veritatis deserunt, illo voluptate error! Neque, repellendus magnam exercitationem ipsam repudiandae dolore! Voluptatem maxime deleniti obcaecati eaque consequatur molestias voluptate veniam blanditiis? Blanditiis reiciendis iure, consequuntur minus aperiam eius, voluptates odio ipsa vel voluptatum quas nemo adipisci sequi sunt possimus facilis unde accusamus asperiores, corrupti qui aspernatur corporis. Perspiciatis, provident distinctio!</p>
+        <button type="button" onclick="remove()" id="mybtn">
+            <h1><b>
+            Click Stop
+            <div id="id"></div></b></h1>
+        </button>
+    </div>
+    <script>
+        document.getElementById("mydiv").addEventListener("mousemove" , myfu);
+        function myfu() {
+            document.getElementById("id").innerHTML = Math.random()
+        }
+        function remove() {
+            document.getElementById("mydiv").removeEventListener("mousemove" , myfu);
+        }
+     </script>
+</body>
+</html>

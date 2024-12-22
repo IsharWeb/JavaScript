@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml api</title>
+
+</head>
+<style>
+    #id {
+        background-color: rgb(0, 0, 0);
+        border: 2px dashed red;
+        height: 20%;
+        width: 30%;
+        padding: .5%;
+        color: white;
+        margin: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #id th {
+        padding: 1%;
+
+        border: .2px dashed rgb(255, 0, 0);
+
+    }
+
+    #id td {
+        padding: 1%;
+
+        border: .2px dashed rgb(255, 0, 0);
+
+    }
+
+    #id h2 {
+        color: rgb(255 255 255);
+        font-weight: 900;
+        border: 2px dashed red;
+        padding: 2%;
+    }
+</style>
+
+<body>
+    <button type="button" id="id" onclick="myapi()">Click for My Details</button>
+
+    <script>
+        function myapi() {
+            const rqurl = 'https://api.github.com/users/Ishardev2000';
+            const api = new XMLHttpRequest();
+            api.open('GET', rqurl)
+            api.onreadystatechange = function () {
+                console.log(api.readyState);
+                if (api.readyState === 4) {
+                    const jsonn = JSON.parse(this.responseText);
+                    const table = `<table> <h2>My GitHub Details</h2>
+        <tr><th>Name =></th><td>${jsonn.name}</td></tr>
+        <tr><th>Id =></th><td>${jsonn.id}</td></tr>
+        <tr><th>Location =></th><td>${jsonn.location}</td></tr>
+        <tr><th>Bio =></th><td>${jsonn.bio}</td></tr>
+        <tr><th>Followers =></th><td>${jsonn.followers}</td></tr>
+        <tr><th>Following =></th><td>${jsonn.following}</td></tr>
+        <tr><th>Public Repos =></th><td>${jsonn.public_repos}</td></tr>
+        <tr><th>Creat_at =></th><td>${jsonn.created_at}</td></tr>
+        <tr><th>Updated_at =></th><td>${jsonn.updated_at}</td></tr>
+        </table>`;
+                    // document.getElementById('id').style.backgroundColor = '#121221';
+                    // document.getElementById('id').style.color = 'white';
+                    // document.getElementById('id').style.border = '2px solid red';
+
+                    document.getElementById('id').innerHTML = table;
+
+                    console.log(jsonn.name);
+                    console.log(jsonn.id);
+                    console.log(jsonn.followers);
+                    console.log(jsonn.avatar_url);
+                    console.log(jsonn.location);
+                    console.log(jsonn.created_at);
+                    console.log(jsonn.updated_at);
+                }
+            }
+            api.send()
+        }
+    </script>
+</body>
+
+</html>

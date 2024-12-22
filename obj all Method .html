@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Methods</title>
+</head>
+<body>
+    <h1>objedt All Methods In Javascript</h1>
+    <script>
+
+        let obj = {
+            name : 'ishar',
+            adriss : 'pk kpk',
+            email : 'isharkhan601@gmail.com',
+            con : 2344234 
+        }
+        // keys and values
+
+        // keys
+        console.log(Object.keys(obj));
+        // values
+        console.log(Object.values(obj));
+        // entries return keys and values
+        console.log(Object.entries(obj));
+
+        // freeze Methos js not change allowd before not delete
+
+        const freez = {
+            name : 'ishar',
+            age : 17,
+            lang : 'JAVASCRIPT OBJ'
+        }
+          
+        // freeze
+        Object.freeze(freez);
+        delete freez.age
+        freez.name = 'Mulhammad Ishar';
+        console.log(freez);
+        //how to chack
+        console.log(Object.isFrozen(freez));
+        
+        // seal
+        const sel = {
+            name : 'ishar',
+            age : 17,
+            lang : 'JAVASCRIPT OBJ'
+        }
+
+        Object.seal(sel)
+        sel.num = 79333;// not allowd
+        sel.name = 'ihsar khan'; // alowd 
+        delete sel.age; // not allowd
+        console.log(sel);
+        // how to chick
+        console.log(Object.isSealed(sel));
+
+
+        // preventEX
+        const preventEX = {
+            name : 'ishar',
+            age : 17,
+            lang : 'JAVASCRIPT OBJ'
+        }
+
+        Object.preventExtensions(preventEX)
+        preventEX.num = 79333;// not allowd
+        preventEX.name = 'ihsar khan'; // alowd 
+        delete preventEX.age; // allowd
+        console.log(preventEX);
+        
+
+        // is() method return true and false
+     
+
+        let is1 = {
+            name : 'ishar',
+            age : 17,
+            lang : 'JAVASCRIPT OBJ'
+        }
+        //let is2 = {
+        //    name : 'ishar',
+        //    age : 17,
+        //    lang : 'JAVASCRIPT OBJ'
+        //}    // retun false location not same
+ 
+        let is2 = is1;
+        console.log(Object.is(is1 , is2)) // true locution is same
+
+
+    </script>
+</body>
+</html>

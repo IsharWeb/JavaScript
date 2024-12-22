@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript Dates
+        <br>
+        Note
+        JavaScript counts months from 0 to 11:
+        January = 0.
+        December = 11.
+    </h1>
+    <h2>Using new Date()</h2>
+    <p>new Date() without arguments, creates a date object with the current date and time:</p>
+    <div id="date"></div>
+    <br>
+    <div id="d2"></div>
+    <br>
+    <div id="demo"></div>
+    <script>
+        const date = new Date();
+        const d = new Date(1000000000);
+        let msec = Date.parse("March 21, 2012");
+        const Date2 = new Date(msec);
+        document.getElementById('d2').innerHTML = d;
+        document.getElementById('demo').innerHTML = Date2;
+        document.getElementById('date').innerHTML = date;
+    </script>
+</body>
+
+</html>

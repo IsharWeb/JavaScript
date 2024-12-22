@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>How to use DOM in Javascript</h1>
+    <div id="one">first</div>
+    <div id="two"></div>
+    <div id="ppp"></div>
+    <p>p1</p>
+    <p>p2</p>
+    
+    
+    <b class="qr1">querySelectorAll 1</b>
+    <b class="qr2">querySelectorAll 2</b>
+    <div id="qrs"></div>
+<script>
+    const element = document.getElementById('one');
+    document.getElementById('two').innerHTML = `I am a second & ${'I am a '+ element.innerHTML}`;
+
+    const elp = document.getElementsByTagName("p");
+    document.getElementById('ppp').innerHTML = `The p1 index is 0 ${elp[0].innerHTML}`;
+
+    const qr = document.querySelectorAll('b.qr1');
+    document.getElementById('qrs').innerHTML = `<BR> THIS IS A  ${qr[0].innerHTML}`
+
+    </script>
+</body>
+</html>

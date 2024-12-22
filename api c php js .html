@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        select {
+            padding: 4px;
+            border-radius: 15px;
+            border: 1px solid #000;
+            margin-top: 5px;
+            font-size: 27px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <form action="">
+        <select name="customers" onchange="showCustomer(this.value)">
+            <option value="">Select a GitHub user:</option>
+            <option value="haiderzamanusafxay">Haider Zaman</option>
+            <option value="Ishardev2000">Muhammad Ishar</option>
+        </select>
+    </form>
+    <br>
+    <div id="txtHint">GitHub user info will be listed here...</div>
+
+    <script>
+        function showCustomer(username) {
+            if (username == "") {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                if (this.status == 200) {
+                    const user = JSON.parse(this.responseText);
+                    const table = `<table>
+                                <tr><th>Username</th><td>${user.login}</td></tr>
+                                <tr><th>ID</th><td>${user.id}</td></tr>
+                                <tr><th>Profile URL</th><td><a href="${user.html_url}" target="_blank">${user.html_url}</a></td></tr>
+                                <tr><th>Avatar</th><td><img src="${user.avatar_url}" width="80" height="80"></td></tr>
+                                <tr><th>Followers</th><td>${user.followers}</td></tr>
+                                <tr><th>Following</th><td>${user.following}</td></tr>
+                                <tr><th>Public Repos</th><td>${user.public_repos}</td></tr>
+                            </table>`;
+                    document.getElementById("txtHint").innerHTML = table;
+                } else {
+                    document.getElementById("txtHint").innerHTML = "Error fetching GitHub data.";
+                }
+            };
+            xhttp.onerror = function () {
+                document.getElementById("txtHint").innerHTML = "Network error, unable to contact GitHub.";
+            };
+            xhttp.open("GET", `https://api.github.com/users/${username}`);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Search()</title>
+</head>
+
+<body>
+    <h1>Javascript Regular Expressions Search() and Replace() Method</h1>
+
+    <button type="button" onclick="myReplace()">Replace()</button><br>
+    <div id="Replace1">Muhammad Ishar</div><br>
+
+
+    <button type="button" onclick="mySearch()">Search()</button>
+    <div id="search1">Muhammad Ishar</div>
+    <br>
+
+
+    <p>Do a global search for "is" in a string:</p>
+
+    <p id="demo"></p><br>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        // myReplace()
+        function myReplace() {
+            let change = document.getElementById("Replace1").innerHTML;
+            document.getElementById("Replace1").innerHTML = change.replace(/Muhammad Ishar/i, "isharkhan601@gmail.com");
+
+            console.log(change.replace(/Muhammad Ishar/i, "isharkhan601@gmail.com"));
+        }
+        // mySearch()
+        function mySearch() {
+            let text = document.getElementById("search1").innerHTML;
+            document.getElementById("search1").innerHTML =
+                text.search("Ishar");
+        }
+        // mySearch()
+        let name = "Muhammad Ishar";
+        let Search = name.search("Ishar");
+        console.log(`the name number is ${Search} `);
+
+
+
+
+        let text = "Is this all there is?";
+        // let text = "123456789";
+        // let result = text.match(/[1-5-6]/g);
+
+
+        //let text = "re, green, red, green, gren, gr, blue, yellow";
+        // let result = text.match(/(red|green)/g);
+
+        // let text = "Give 100%!"; 
+        // let result = text.match(/\d/g);
+
+        //let text = "Is this all there is?";
+        // let result = text.match(/\s/g);
+
+
+        // let text = "HELLO, LOOK AT YOU!"; 
+        // let result = text.search(/\bLO/);
+
+
+
+        //let text = "Hellooo World! Hello W3Schools!"; 
+        //let result = text.match(/lo*/g);
+        let result = text.match(/is/g);
+        document.getElementById("demo").innerHTML = result;
+
+        let text2 = "\nIs th\nis it?";
+        let result2 = text.match(/^is/m);
+        document.getElementById("demo2").innerHTML = "Result is: " + result;
+
+
+        let text3 = "Is this all there is?";
+        let result3 = text.match(/[h]/g);
+        document.getElementById("demo3").innerHTML = result;
+    </script>
+</body>
+
+</html>

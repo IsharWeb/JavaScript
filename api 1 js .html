@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API js</title>
+</head>
+<body>
+    <h2>How to use API in JavaScrip
+
+    </h2>
+    <button type="button" id="apibtn" onclick="mylocation()">Click Me
+    </button>
+    <div id="apiid"></div>
+    <script>
+        const locationss = document.getElementById('apiid');
+
+        function mylocation() {
+            try {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } catch {
+                locationss.innerHTML = err;
+            }
+        }
+        function showPosition(Position) {
+            locationss.innerHTML = `Latitude: ${Position.coords.latitude} <br> Longitude: ${Position.coords.longitude}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input js</title>
+</head>
+<body>
+    <h2>how to use input in JavaScript</h2>
+    <input id="number" placeholder="Enter a number">
+    <button type="button" onclick="ent()">ENTER</button>
+    <div id="MYNUM"></div>
+
+    <script>
+        function ent() {
+            let f = document.getElementById('number').value;
+            let numm;
+            if (isNaN(f) || f < 1 || f > 10 ) {
+                numm = 'Enter a Number between 1 & 10';
+                
+            } else {
+                 numm = 'GOOD';
+            }
+            
+            document.getElementById('MYNUM').innerHTML = numm;
+        }
+    
+
+    </script>
+</body>
+</html>

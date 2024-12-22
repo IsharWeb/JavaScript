@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>gropic js</title>
+</head>
+<body>
+    <div id="myid" style="width: 100%;max-width:700px"></div>
+    <script>
+        const xname = ['Pakistan','iran','india','usa','usk'];
+        const ynum = [60, 40, 54, 34, 5];
+        const mydata = [{
+            x:xname,
+            y:ynum,
+            type:'bar',
+            orientation:'v',
+            marker:
+            {color : 'red'}
+        }];
+        const title = {title:"World Wide Wine Production"};
+        Plotly.newPlot('myid', mydata , title)
+    </script>
+</body>
+</html>

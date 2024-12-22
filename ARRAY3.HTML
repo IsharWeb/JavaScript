@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array fush 3 </title>
+</head>
+
+<body>
+    <h1>fush method in javascript</h1>
+    <button type="button" onclick="javad()">go</button>
+
+    <p id="demo"></p>
+    <button onclick="myFunction()">change</button>
+
+    <p id="dem"></p>
+
+    <script>
+        const aboutdog = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog", ""];
+        document.getElementById('demo').innerHTML = aboutdog;
+        function javad() {
+            // aboutdog.pop ("Hellow evryone")
+            aboutdog.push("becouse dog is " + "quick");
+
+            document.getElementById('demo').innerHTML = aboutdog;
+        }
+        const fruits = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo").innerHTML = fruits;
+        function myFunction() {
+            fruits[fruits.length] = "Lemon";
+            document.getElementById("demo").innerHTML = fruits;
+        }
+        const fruit = ["Banana", "Orange", "Apple"];
+        document.getElementById("demo").innerHTML = Array.isArray(fruit);
+        var fru = ["Banana", "Orange", "Apple"];
+        document.getElementById("dem").innerHTML = fru instanceof Array;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math methods</title>
+</head>
+
+<body>
+    <h2>JavaScript Math Constants</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        var a = Math.round(2.92);
+        var b = Math.ceil(3.45);
+        var c = Math.floor(2.5);
+        var d = Math.trunc(5.92);
+        var e = Math.pow(2, 2);
+        var f = Math.sign(7);
+        var g = Math.sqrt(81);
+        //Math.random() returns a random number between 0 and 1:
+        var h = Math.random(7);
+        document.write(a + '<br>' + b + '<br>' + c + '<br>' + d + '<br>' + e + '<br>' + f + '<br>' + g + '<br>' + h + '<br>');
+
+        document.getElementById("demo").innerHTML =
+            "<p><b>Math.E:</b> " + Math.E + "</p>" +
+            "<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+            "<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+            "<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+            "<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+            "<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+            "<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+            "<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+    </script>
+</body>
+
+</html>

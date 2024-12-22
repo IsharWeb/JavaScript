@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo">Fetch a file to change this text.</p>
+<p id="myid">Fetch a file to change this text.</p>
+<script>
+getText("good boy");
+async function getText(file) {
+    let i = await fetch(file);
+    let j = await x.text();
+    document.getElementById("myid").innerHTML = j
+}
+
+let file = "https://www.facebook.com/";
+
+fetch (file)
+.then(x => x.text())
+.then(y => document.getElementById("demo").innerHTML = y);
+
+</script>
+</body>
+</html>

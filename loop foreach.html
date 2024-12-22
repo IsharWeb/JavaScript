@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foreach in js</title>
+</head>
+
+<body>
+    <h2>how to use foreach in javascript</h2>
+    <div id="hi"></div>
+    <script>
+        let javascript = ["this", "a", "javascript", "array", "in", "foreach"];
+        let text = "<h2> <ol> <li>";
+        javascript.forEach(myfunctions);
+        document.getElementById("hi").innerHTML = text;
+        function myfunctions(value, array, index) {
+            text += "VALUE <li><BR> :" + value + " ";
+            text += "INDEX <li> <BR>:" + index + "<br><li>";
+            //  text += "ARRAY <li> :"+ array + "<br>";
+        }
+    </script>
+</body>
+
+</html>

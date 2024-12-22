@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json storage js</title>
+</head>
+
+<body>
+    <h2>How to use json() storage in javaScript</h2>
+    <div id="id"></div>
+    <script>
+        const obj = {
+            name: 'ishar kahn',
+            age: 17,
+            city: 'swabi'
+        }
+        const myjn = JSON.stringify(obj);
+        localStorage.setItem('chjson', myjn);
+        let text = localStorage.getItem('chjson');
+        let jsn = JSON.parse(text);
+        let all = `Name : ${jsn.name}\nAge : ${jsn.age}\nCity : ${jsn.city}`;
+        console.log(all);
+        
+        // JSON.stringify() will remove any functions from an object.
+        const obj1 = { name: "John", age: function () { return 30; }, city: "New York" };
+        const myJSON = JSON.stringify(obj);
+        console.log(myJSON);
+    </script>
+</body>
+
+</html>

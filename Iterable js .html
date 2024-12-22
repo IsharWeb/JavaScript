@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterables</title>
+</head>
+
+<body>
+
+    <h3>How to use Iterables in JavaScript</h3>
+    <script>
+        // method Number 1
+        const n1 = myfu();
+        function myfu() {
+            let n1 = 0;
+            return {
+                next: function () {
+                    n1 += 10;
+                    return {
+                        value: n1,
+                        done: false
+                    }
+                }
+            };
+        }
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10 
+        n1.next(); // + 10
+        // == 90 
+        // === 100;
+
+        console.log(n1.next().value);
+
+
+        // method Number 2
+        // Create an Object
+        myNumbers = {};
+
+        // Make it Iterable
+        myNumbers[Symbol.iterator] = function () {
+            let n = 0;
+            done = false;
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) { done = true }
+                    return { value: n, done: done };
+                }
+            };
+        }
+
+        let text = ""
+        for (const num of myNumbers) {
+            text += num + "<br>"
+        }
+        console.log(text);
+
+        // method Number 3
+
+        // Create an Object
+        myNumbers = {};
+
+        // Make it Iterable
+        myNumbers[Symbol.iterator] = function () {
+            let n = 0;
+            done = false;
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) { done = true }
+                    return { value: n, done: done };
+                }
+            };
+        }
+
+        // Create an Iterator
+        let iterator = myNumbers[Symbol.iterator]();
+
+        let text = ""
+        while (true) {
+            const result = iterator.next();
+            if (result.done) break;
+            text += result.value + "<br>";
+        }
+        console.log(text);
+    </script>
+</body>
+
+</html>

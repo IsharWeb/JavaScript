@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic User Data Display</title>
+</head>
+
+<body>
+    <p>Suggestions :: <span id="ottext"></span></p>
+    <p>Please enter 'name' or 'id' or 'location' or 'email' or 'boi' or 'followers' to display.</p>
+    <input type="text" id="intext" onkeyup="fetchUserData(this.value)">
+    <script>
+        function fetchUserData(input) {
+            if (input.length === 0) {
+                document.getElementById('ottext').innerHTML = '';
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    const user = JSON.parse(this.responseText);
+                    // Check the input and display the requested property
+                    let propertyToShow = "";
+                    if (input.toLowerCase() === "name") {
+                        propertyToShow = user.login; // Assuming 'login' is the username
+                    } else if (input.toLowerCase() === "id") {
+                        propertyToShow = user.id;
+                    } else if (input.toLowerCase() === "location") {
+                        propertyToShow = user.location;
+                    } else if (input.toLowerCase() === "email") {
+                        propertyToShow = user.email;
+                    } else if (input.toLowerCase() === "bio") {
+                        propertyToShow = user.bio;
+                    } else if (input.toLowerCase() === "followers") {
+                        propertyToShow = user.followers;
+                    } else {
+                        propertyToShow = "Please enter 'name' or 'id' or 'location' or 'email' or 'boi' or 'followers'.";
+                    }
+
+                    document.getElementById('ottext').innerHTML = propertyToShow;
+                } else {
+                    document.getElementById('ottext').innerHTML = "Error fetching data.";
+                }
+            };
+            xhr.onerror = function () {
+                document.getElementById('ottext').innerHTML = "Network error.";
+            };
+            xhr.open("GET", "https://api.github.com/users/Ishardev2000");
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

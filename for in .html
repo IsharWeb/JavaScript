@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in js</title>
+</head>
+
+<body>
+    <h2> object in javascripyt whit example forin</h2>
+    <div id="in"></div>
+    <div id="ini"></div>
+    <script>
+        //array
+        const numbers = [45, 4, 9, 16, 25];
+
+        let txt = "";
+        for (let a in numbers) {
+            txt += numbers[a] + "<br>";
+        }
+        document.getElementById("ini").innerHTML = txt;
+        //object
+        let care = {
+            name: "moter",
+            size: 200,
+            model: 2023
+        }
+        let x = "";
+        for (let b in care) {
+            x += care[b] + " ";
+        }
+        document.getElementById("in").innerHTML = x;
+    </script>
+</body>
+
+</html>

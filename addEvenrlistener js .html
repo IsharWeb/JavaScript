@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEvenListener() js</title>
+</head>
+
+<body>
+    <h2>How to use addEventListner() Method in JavaScript</h2>
+
+    <button id="btn" type="button">Click Me</button>
+    <h2>JavaScript addEventListener()</h2>
+
+    <p>This example uses the addEventListener() method on the window object.</p>
+
+    <p>Try resizing this browser window to trigger the "resize" event handler.</p>
+
+    <p id="demo"></p>
+    <script>
+        var a = document.getElementById("btn");
+        a.addEventListener("click", prom);
+        a.addEventListener("click", alertt);
+        function prom() {
+            prompt("Enter your Name");
+        }
+        function alertt() {
+            alert("Good Name");
+        }
+        window.addEventListener("resize", function () {
+            document.getElementById("demo").innerHTML = Math.random();
+        });
+    </script>
+</body>
+
+</html>

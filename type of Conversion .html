@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type Conversion</title>
+</head>
+
+<body>
+    <h3>
+        <li>Converting Strings to Numbers <br>
+        <li>Converting Numbers to Strings <br>
+        <li>Converting Dates to Numbers <br>
+        <li>Converting Numbers to Dates <br>
+        <li>Converting Booleans to Numbers <br>
+        <li>Converting Numbers to Booleans <br>
+    </h3>
+
+    <h1>JavaScript Numbers</h1>
+    <h2>The Number() Method</h2>
+
+    <p>The Number() metod converts a variable (or value) into a number:</p>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML =
+            Number("3.14") + "<br>" +
+            Number(Math.PI) + "<br>" +
+            Number("    ") + "<br>" +
+            Number("") + "<br>" +
+            Number("99 88") + "<br>" +
+            Number("John") + "<br>";
+        console.log(
+            Number("3.14") + "<br>" +
+            Number(Math.PI) + "<br>" +
+            Number("    ") + "<br>" +
+            Number("") + "<br>" +
+            Number("99 88") + "<br>" +
+            Number("John") + "<br>"
+        );
+        //The JavaScript String() Method
+        document.getElementById("demo2").innerHTML =
+            String(x) + "<br>" +
+            String(123) + "<br>" +
+            String(100 + 23);
+        console.log(
+            String(x) + "<br>" +
+            String(123) + "<br>" +
+            String(100 + 23)
+        );
+
+        // JavaScript Type Conversions
+
+        document.getElementById("demo3").innerHTML =
+            (5 + null) + "<br>" +
+            ("5" + null) + "<br>" +
+            ("5" + 2) + "<br>" +
+            ("5" - 2) + "<br>" +
+            ("5" * "2") + "<br>" +
+            ("5" / "2") + "<br>";
+
+        console.log(
+            (5 + null) + "<br>" +
+            ("5" + null) + "<br>" +
+            ("5" + 2) + "<br>" +
+            ("5" - 2) + "<br>" +
+            ("5" * "2") + "<br>" +
+            ("5" / "2") + "<br>"
+        );
+    </script>
+</body>
+
+</html>

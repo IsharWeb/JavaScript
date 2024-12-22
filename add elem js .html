@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM
+    </title>
+</head>
+
+<body>
+    <div id="d1"><br>
+        <d2 id="d2">This is a TWO</d2><br>
+        <d3>This is a THREE</d3><br>
+    </div>
+    <script>
+        const d22 = document.createElement('d2');
+        const d33 = document.createTextNode('Hello I am TWO But I am change');
+        d22.appendChild(d33);
+        const elm = document.getElementById('d1');
+        const chil = document.getElementById('d2 <br>');
+        elm.insertBefore(d22, chil)
+    </script>
+</body>
+
+</html>

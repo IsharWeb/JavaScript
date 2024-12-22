@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errors js</title>
+</head>
+
+<body>
+    <h3>How to use Errors Method in js</h3>
+    <b>Enter Number 5 in to 10</b><br>
+    <input type="text" id="err1">
+    <button type="button" onclick="myfunction()">OK</button>
+
+    <p id="errms"></p>
+    <hr style="height: 2px;">
+    <script>
+        function myfunction() {
+            const message = document.getElementById('errms');
+            message.innerHTML = "";
+            const allerr = document.getElementById('err1').value;
+            try {
+                if (allerr.trim() == '') throw "Enter Number";
+                if (isNaN(allerr)) throw ' This is no Number';
+                if (allerr < 5) throw ' Your Number is Low';
+                if (allerr <= 10) throw "Good";
+                if (allerr > 10) throw " Your Number is Long";
+            } catch (errors) {
+                message.innerHTML = errors;
+            }
+            finally {
+                document.getElementById("demo").value = "";
+                // document.getElementById("demo").value = "Muhammad Ishar";
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop in js</title>
+</head>
+
+<body>
+    <h2>Loop JavaScript Number 4</h2>
+    <p>And you can omit expression 1 (like when your values are set before the loop starts):</p>
+    This is not always the case. JavaScript doesn't care. Expression 1 is optional.
+    <br>
+    You can initiate many values in expression 1 (separated by comma):
+    <p id="wow"></p>
+    <script>
+        const loop = ["loops", "loop for", " loop in", "loop of", "while", "do while", "etc"];
+        //now scept 0 loops and 1 loop for
+        //let i = 2;
+        let i = 0;
+        let leng = loop.length;
+        let text = "";
+        // semicolon is very important ( ; )
+        for (; i < leng; i++) {
+            text += loop[i] + '<br>';
+            //true text += loop[i] + "<br>";
+            //i++;
+        }
+        document.getElementById('wow').innerHTML = text;
+
+
+
+    </script>
+</body>
+
+</html>

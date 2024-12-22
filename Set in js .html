@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set js</title>
+</head>
+
+<body>
+    <h2>javascript Sets</h2>
+    <p>we are use deffrence type of Sets in js</p>
+    <h3><div id="set1"></div></h3>
+    <h3><div id="set2"></div></h3>
+    <h3><div id="set3"></div></h3>
+    <h3><div id="set4"></div></h3>
+    <h3><div id="set5"></div></h3>
+    <h3><div id="set6"></div></h3>
+    <h3><div id="set7"></div></h3>
+    <script>
+        // Set size
+        const st1 = new Set(["A", "B", "C", "D"]);
+        let st2 = st1.size;
+        console.log([st2]);
+        document.getElementById("set1").innerHTML = "Set size " + st2;
+
+
+
+        // Set add
+        let st3 = new Set();
+        //adding
+        st3.add("hello1");
+        st3.add("hello2");
+        st3.add("hello3");
+        st3.add("hello4");
+        st3.add("hello5");
+        let st4 = st3.size;
+        console.log([st4]);
+        document.getElementById("set2").innerHTML = "Set ADD size " + st4;
+
+        // Set variables
+        const st5 = new Set();
+
+        // variables
+        const a = "aa";
+        const b = "bb";
+        const c = "cc";
+        const d = "dd";
+
+        // Now use ADD 
+        // this is a variable don't use string 
+        st5.add(a);
+        st5.add(b);
+        st5.add(c);
+        st5.add(d);
+
+        let st6 = st5.size;
+
+        console.log([st6])
+        document.getElementById("set3").innerHTML = "we ADD four clases " + st6;
+        // Create a new Set
+        const letters = new Set(["a", "b", "c"]);
+
+        // Add a new Element
+        letters.add("d");
+        letters.add("e");
+        let letters1 = letters.size;
+        // Display set.size
+        document.getElementById("set4").innerHTML = "Add a new Element " + letters1;
+
+
+
+        // Create a Set
+        const letters3 = new Set();
+
+        // Add values to the Set
+        letters3.add("a");
+        letters3.add("b");
+        letters3.add("c");
+        letters3.add("c");
+        letters3.add("c");
+        letters3.add("c");
+        letters3.add("c");
+        letters3.add("c");
+        let letters4 = letters3.size;
+        // Display set.size
+        console.log([letters4]);
+        document.getElementById("set5").innerHTML = "If you add equal elements, only the first will be saved " + letters4;
+
+        //forEach() calls a function for each element
+        let forE = new Set(["Muhammad", "Ishar", "pakistan", 112233])
+        let text = "";
+        forE.forEach(function (idress) {
+            text += idress + "<br>";
+        });
+        console.log([text]);
+        document.getElementById("set6").innerHTML = " forEach() calls a function for each element " + "<br>" + text;
+
+
+        // Create a Set
+        const letters7 = new Set(["a", "b", "c"]);
+
+        // List all Elements
+        let text2 = "";
+        for (const x of letters7.values()) {
+            text2 += x + "<br>";
+        }
+       console.log([text2])
+        document.getElementById("set7").innerHTML = "Set .values" + text2;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Js</title>
+</head>
+<body>
+    <h2>How to use html Forms in JavaScript</h2>
+    <form name="myform" action="https://www.google.com/action_page.php" onsubmit="return errr()" method="post">
+        Name : <input type="text" name="firstname" role="@" required>
+        <button type="submit" value="submit">Ok</button>
+    </form>
+    <script>
+        function errr() {
+            let er = document.forms["myform"]["firstname"].value;
+            if (er == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

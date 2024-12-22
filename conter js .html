@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter js</title>
+</head>
+<body>
+    <h1>Javascript Object Counter</h1>
+    <script>
+        const obj = {
+            counter : 0
+        };
+      Object.defineProperty(obj, "reset",{
+        get : function(){
+            this.counter = 0;
+        }
+      });
+      Object.defineProperty(obj, "increment",{
+        get : function () {
+            this.counter++;
+        }
+      });
+      Object.defineProperty(obj, "decrement",{
+        get : function () {
+            this.counter--;
+        }
+      });
+      Object.defineProperty( obj , "add",{
+        set : function(value) {
+            this.counter += value;
+        }
+      });
+      Object.defineProperty(obj , "subtract",{
+        set : function(value){
+            this.counter -= value;
+        }
+      })
+      obj.reset;
+      obj.add = 100;
+      obj.subtract = 50;
+      obj.increment;
+      obj.decrement;
+      console.log(obj.counter);
+
+    </script>
+</body>
+</html>

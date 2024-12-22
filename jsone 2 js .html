@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>json fu</title>
+</head>
+<body>
+    <h1>How to use json function in javaScript</h1>
+    <div id="id"></div>
+    <script>
+        const text = '{"name":"John", "age":"function() {return 17;}", "city":"pakistan"}';
+         const obj = JSON.parse(text);
+         obj.age = eval('(' +obj.age+')' );
+         let all = `Name: ${obj.name} <br> Age: ${obj.age()} <br> City: ${obj.city}`;         document.getElementById('id').innerHTML = all;
+         console.log(all);
+    </script>
+</body>
+</html>

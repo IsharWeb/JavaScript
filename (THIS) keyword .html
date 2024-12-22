@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This keyword js</title>
+</head>
+<body>
+    <h3>How to use THIS keyword in Javascript</h3>
+
+    <div id="data"></div>
+    
+    <script>
+        const allclass = {
+            class : 10,
+            students : 50,
+            rollNO : 1,
+            student : function () {
+                return this.class + "<br>" + this.rollNO + "<br>" + this.rollNO + "<br>" + this.students 
+            }         
+        };
+
+
+        document.getElementById('data').innerHTML = allclass.student();
+        console.log(allclass.student())
+
+    </script>
+</body>
+</html>

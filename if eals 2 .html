@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if eals practise2 </title>
+</head>
+   <h2>if eals practise nummber 2</h2>
+   <input id="age" value="18" placeholder="enter your age">
+   <button type="button" onclick="myage()">OK</button>
+   <p id="old"></p>
+<body>
+    <script>
+    function myage(){
+        let age2 = 18;
+        let age = Number(document.getElementById('age').value)
+    if(age >= 18){
+        document.write( "now you accepted my chelanges")
+    }else if(age < 18){
+        document.write( "you so young you don't do this")
+    }else if(isNaN(age)) {
+        document.write("type number this is not number")
+    }
+}
+    </script>
+</body>
+</html>

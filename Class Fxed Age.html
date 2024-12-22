@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Burthday</title>
+</head>
+
+<body>
+    <h1>How to use Class in Jvascript</h1>
+    <div id="isharkhan"></div>
+    <script>
+        class Heigh {
+            constructor(normel, low) {
+                this.normel = normel;
+                this.low = low;
+            }
+            age() {
+                const date = new Date();
+                return date.getFullYear() - this.low;
+            }
+        }
+        const def = new Heigh('ishar', prompt
+            ('Enter Yoer Burthday Age'));
+        document.getElementById('isharkhan').innerHTML = `Your Age is ${def.age()} year`;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xml api js</title>
+</head>
+
+<body>
+    <h1>hwo to use XML api in js</h1>
+    <div id="myid"></div>
+    <button onclick="loading()">Show me</button>
+    <script>
+        function loading() {
+            const xml = new XMLHttpRequest();
+            xml.onload = function () {
+                document.getElementById("myid").innerHTML = ` 
+                <b>Name :</b> ${this.name}<br>
+                <b>Id :</b> ${this.id}<br>
+                <b>Followers :</b> ${this.followers}<br>
+                <b>following :</b> ${this.following}<br>
+                `;
+                console.log(this.responseText);
+            }
+            xml.open("POST", "https://api.github.com/users/haiderzamanusafxay?fbclid=IwAR3KGUCoYacdsBXOKaiCjDRt58uZMOVtEgHY0weiykJVut3Bk27UTyWFzDY");
+            xml.send();
+        }
+    </script>
+
+</body>
+
+</html>

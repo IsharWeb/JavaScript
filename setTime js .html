@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window SetTime Js</title>
+</head>
+
+<body>
+    <h2>Window SetTime() IN Javascript</h2>
+    <button type="button" onclick="mytime = setTimeout(myfu , 1000)">Wait 1s</button>
+    <button type="button" onclick="clearTimeout(mytime,d)">Stop</button>
+    <h1><b>
+            <div id="myid"></div>
+
+        </b></h1>
+    <script>
+        function myfu() {
+            alert('Thanks for 1 Seconds Wait');
+            alert('I want to show Time');
+            const date = new Date();
+            document.getElementById('myid').innerHTML = date.toLocaleDateString();
+        }
+    </script>
+</body>
+
+</html>

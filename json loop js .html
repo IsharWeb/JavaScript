@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON LOOP </title>
+<body>
+<h2>How to use JSON for in loop in js</h2>
+<script>
+    const obj =  '{"name":"ishar", "age":17, "car":null}';
+    let jsn = JSON.parse(obj);
+    // accses keys 
+    let text = "";
+    for (const x in jsn) {
+      text += x +',';
+    }
+    console.log(text);
+    // accses values
+    let text1 = "";
+    for (const x in jsn) {
+      text1 += jsn[x] +',';
+    }
+    console.log(text1);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xml api js</title>
+</head>
+
+<body>
+    <h2>How to use Xml api in javaScript</h2>
+    <button onclick="onloadme()">Click XML API</button>
+    <div id="xmlid"></div>
+    <script>
+        function onloadme() {
+            const xml = new XMLHttpRequest();
+            xml.onload = function () {
+                let myjson = JSON.parse(this.responseText)
+                let mydata = `
+                <h1>Name ::</h1><h3> ${myjson.name}<br>
+                <h1>Id ::</h1><h3> ${myjson.id}<br>
+                <h1>followers ::</h1><h3> ${myjson.followers}<br>
+                <h1>Bio ::</h1><h3> ${myjson.bio}<br>
+                `;
+                document.getElementById("xmlid").innerHTML = mydata;
+
+            }
+            xml.open('GET', 'https://api.github.com/users/Ishardev2000');
+            xml.send();
+        }
+    </script>
+</body>
+
+</html>

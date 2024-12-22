@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Date</title>
+</head>
+
+<body>
+    <h1>How to access JSON() date in JavaScript</h1>
+    <div id="id"></div>
+    <div id="id1"></div>
+    <script>
+        const jsont = '{"name":"ishar khan", "birth":"2007-3-1", "age":17}';
+        const Jsonobj = JSON.parse(jsont);
+        Jsonobj.birth = new Date(Jsonobj.birth);
+        let all = `Name: ${Jsonobj.name} <br> Age: ${Jsonobj.age} <br> Birth Date: ${Jsonobj.birth}`;
+        document.getElementById('id').innerHTML = '<b>' + all;
+       console.log(all);
+
+       // example 2
+       const kv = '{"name1":"ishar", "birth1":"1986-12-14", "city1":"Pakistan"}';
+       let obj = JSON.parse(kv, function (key , value) {
+           if (key == "birth1") {
+             return new Date(value).toLocaleDateString();
+           } else {
+            return value;
+           }
+       });
+       let all1 = `Name: ${obj.name1} <br> Date Birth: ${obj.birth1} <br> City: ${obj.city1}`;
+       document.getElementById('id1').innerHTML = '<h3>' + all1;
+       console.log(all1);
+
+</script>
+</body>
+
+</html>

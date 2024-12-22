@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for OF in js</title>
+</head>
+
+<body>
+    <h2>hot use for OF in javascript</h2>
+    <div id="OF"></div>
+    <div id="OF1"></div>
+    <script>
+        //THIS IS A STRING
+        let js = "JAVASCRIPT";
+        let txt = "<H1><OL><LI>";
+        for (let w of js) {
+            txt += w + "<br>";
+            // text += home + " ";
+            //text += home[x] + " ";
+            // text += js + " <br>";
+        }
+        document.getElementById("OF1").innerHTML = txt;
+        //THIS IS A ARRAY
+
+
+        let home = ["bulb", "caleen", "room", "bathroom"];
+        let text = "<h4><LI>";
+        for (let x of home) {
+            text += x + " ";
+            // text += home + " ";
+            //text += home[x] + " ";
+            // text += js + " <br>";
+        }
+        document.getElementById("OF").innerHTML = text; 
+    </script>
+</body>
+
+</html>

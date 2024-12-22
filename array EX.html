@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0%;
+    }
+
+    ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    ul.topnav li {
+      float: left;
+    }
+
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px 18px;
+      text-decoration: none;
+    }
+
+    ul.topnav li a:hover {
+      background-color: rgb(0, 106, 255);
+      border-radius: 20px;
+    }
+
+    /* ul.topnav li a.active {background-color: #04a5aa;} */
+    ul.topnav li.right {
+      float: right;
+      color: WHITE;
+
+    }
+    ul.topnav li .but{
+      background-color: rgb(0, 106, 255);
+      height: 35px;
+      width: 90px;
+      border:none;
+      border-radius:20px ;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 9px;
+    }
+
+    @media screen and (max-width: 400px) {
+
+      .topnav
+      ul.topnav li.right,
+      ul.topnav li{
+        float: none;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <ul class="topnav">
+    <li><a class="active" href="#home">Home</a></li>
+   <label for=""></label>
+    <li><a href="#news">About</a></li>
+    <li><a href="#news">blog</a></li>
+    <li><button class="but">Contact</button></li>
+    <li class="right">
+      <h3 style="margin-right: 10%; ">LOGOBAKERY</h3>
+    </li>
+  </ul>
+  <br>
+</body>
+</html>

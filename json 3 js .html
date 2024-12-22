@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json js</title>
+</head>
+
+<body>
+    <h2>How to use Json() in javaScript</h2>
+    <div id="id"></div>
+    <script>
+        // json obj  
+        const obj = '{"name1":"ishar", "birth1":"1986-12-14", "city1":"Pakistan"}';
+        const arr = '{"name1":"ishar", "birth1":"1986-12-14", "city1":"Pakistan"}';
+        // convert to obj
+        const object = JSON.parse(obj);
+        const array = JSON.parse(arr);
+        console.log(object);
+        console.log(array);
+
+        // obj
+        const strobj = { name: "ishar", birth: "2007 /3 / 1", city: "Pakistan" };
+        const strarr = { name1: "ishar", birth1: "2007 /3 / 1", city1: "Pakistan"};
+
+        // convert to string
+        let stro = JSON.stringify(strobj);
+        let stra = JSON.stringify(strarr);
+        console.log(stro);
+        console.log(stra);
+
+    </script>
+</body>
+
+</html>

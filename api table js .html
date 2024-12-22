@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api js</title>
+</head>
+<style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            color: #555;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            border-radius: 50%;
+            border: 4px solid #007bff;
+        }
+</style>
+<body>
+    <h2> How to use api in JavaScript</h2>
+       <form action="">
+        <select name="customers" onchange="custom(this.value)">
+        <option value="">Select my Or your dtails</option>
+        <option value="Ishardev2000">Ishar Khan</option>
+        <option value="haiderzamanusafxay">Haider Zaman</option>
+        </select>
+       </form>
+       <br>
+       <div id="myid">My and your GitHub informations</div>
+    <script>
+       function custom(username) {
+        if (username == '') {
+            document.getElementById('myid').innerHTML = '';
+            return;
+        }
+        const xmlr = new XMLHttpRequest();
+        xmlr.onload = function (){
+            if (this.status == 200) {
+                const jsn = JSON.parse(this.responseText);
+                const myt = ` <table>
+                                <tr><th>Username</th><td>${jsn.login}</td></tr>
+                                <tr><th>ID</th><td>${jsn.id}</td></tr>
+                                <tr><th>Profile URL</th><td><a href="${jsn.html_url}" target="_blank">${jsn.html_url}</a></td></tr>
+                                <tr><th>Avatar</th><td><img src="${jsn.avatar_url}" width="100" height="100"></td></tr>
+                                <tr><th>Followers</th><td>${jsn.followers}</td></tr>
+                                <tr><th>Following</th><td>${jsn.following}</td></tr>
+                                <tr><th>Public Repos</th><td>${jsn.public_repos}</td></tr>
+                            </table>`
+                            document.getElementById('myid').innerHTML = myt;
+                        
+            } else {
+                document.getElementById('myid').innerHTML = 'Some Error';
+            }
+            
+        };
+        
+        xmlr.onerror = function () {
+            document.getElementById('myid').innerHTML = 'Network error';
+        }
+
+        xmlr.open("GET" , `https://api.github.com/users/${username}`)
+        xmlr.send()
+
+       }
+    </script>
+</body>
+</html>

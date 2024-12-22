@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Strict</title>
+</head>
+
+<body>
+    <h3>How to use Javascript Strict Method</h3>
+    <br>
+    <h2>Future Proof!</h2>
+    <p>Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.</p>
+    <b>These are</b>
+    
+    <ul>
+        <li>implements</li>
+        <li>interface</li>
+        <li>let</li>
+        <li>package</li>
+        <li>private</li>
+        <li>protected</li>
+        <li>public</li>
+        <li>static</li>
+        <li>yield</li>
+    </ul>
+
+    
+    <div id="strict1"></div>
+    <div id="strict2"></div>
+    <div id="stric3"></div>
+    <script>
+        // "use strict";
+        // x = 3.14;  // This will cause an error (x is not defined).
+        "use strict";
+        myFunction();
+
+        function myFunction() {
+            y = 3.14;   // This will cause an error (y is not defined)
+        }
+
+
+        a = 3.14;    // This will not cause an error.
+        myFunction2();
+
+        function myFunction2() {
+            "use strict";
+            a = 3.14;  // This will cause an error (a is not defined).
+        }
+
+        // Using an object without declaring it, is not allowed.
+
+        //         "use strict";
+        //  x = {p1:10, p2:20};   // This will cause an error (x is not defined).
+
+
+
+        // Deleting a function is not allowed.
+
+        // "use strict";
+        // function i(p1, p2) {}; 
+        // delete i;        // This will cause an error 
+
+
+        // Writing to a read-only property is not allowed.
+
+        // "use strict";
+        // const obj = {};
+        // Object.defineProperty(obj, "x", {value:0, writable:false});
+
+        // obj.x = 3.14;   // This will cause an error
+
+
+
+        // The string "eval" cannot be used as a variable.
+
+
+        // "use strict";
+        // let eval = 3.14;   // This will cause an error 
+
+        // The string "arguments" cannot be used as a variable.
+
+        // "use strict";
+        // let arguments = 3.14;   // This will cause an error 
+
+
+        // The with statement is not allowed.
+
+        // "use strict";
+        // with (Math){x = cos(2)};   // This will cause an error 
+
+
+        // "use strict";
+        // function myf() {
+        //     alert(this) // will alert "undefined"
+        // }
+        // myf();
+
+    </script>
+</body>
+
+</html>

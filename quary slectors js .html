@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <h2>Finding HTML Elements by Id</h2>
+    <p id="id01">Hello World!</p>
+    <p id="id02">Hello Sweden!</p>
+    <p id="id03">Hello Japan!</p>
+    <div class="class">this is class</div>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+        $(document).ready(function () {
+            var myElements = $("#id01");
+            var mytage = $("#id02");
+            var myclass = $(".class");
+            $("#demo1").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+            $("#demo2").text("The text from the p paragraph is: " + mytage[0].innerHTML);
+            $("#demo3").text("The text from the class paragraph is: " + myclass[0].innerHTML);
+        });
+    </script>
+
+</body>
+
+</html>

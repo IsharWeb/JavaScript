@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // let employee = {
+        //     eid: "E102",
+        //     ename: "Jack",
+        //     eaddress: "New York",
+        //     salary: 50000
+        // }
+
+        // alert("Employee=> ", employee);
+        // let newEmployee = employee;    // Shallow copy
+        // alert("New Employee=> ", newEmployee);
+
+        // alert("---------After modification----------");
+        // newEmployee.ename = "Beck";
+        // alert("Employee=> ", employee);
+        // alert("New Employee=> ", newEmployee);
+        // const lodash = require('lodash');
+        // let employee = {
+        //     eid: "E102",
+        //     ename: "Jack",
+        //     eaddress: "New York",
+        //     salary: 50000,
+        //     details: function () {
+        //         return "Employee Name: "
+        //             + this.ename + "-->Salary: "
+        //             + this.salary;
+        //     }
+        // }
+        // let deepCopy = lodash.cloneDeep(employee);
+        // alert("Original Employee Object");
+        // alert(employee);
+        // alert("Deep Copied Employee Object");
+        // alert(deepCopy);
+        //     deepCopy.eid = "E103";
+        //     deepCopy.ename = "Beck";
+        //     deepCopy.details = function () {
+        //         return "Employee ID: " + this.eid
+        //             + "-->Salary: " + this.salary;
+        //     }
+        // alert("----------After Modification----------");
+        // alert("Original Employee Object");
+        // alert(employee);
+        // alert("Deep Copied Employee Object");
+        // alert(deepCopy);
+        // alert(employee.details());
+        // alert(deepCopy.details());
+        // const ary = [1, 2,[8], 3, 4, 5, 6];
+        // const hero = ["HAYAM", "JAVAD", "SAQIB"];
+        // arr.push('66');
+        // arr.fill(2)
+        // arr.filter("HAYAM")''
+        // document.write(ary.indexOf(8) +1 );
+        // hero.shift('jihad');
+        // document.write(hero[1]);
+
+
+        //shallow copy
+        // let names={
+        //     name11:'sajid khan'
+        // } 
+        // var names1 = Object.assign({},names);
+        // names1.name11='ishar khan';
+        // console.log(names1.name11);
+
+
+
+
+
+
+        // this is copy
+        // var name1 = {
+        //     name : 'shahzeeb khan'  ,
+        //     adress : {
+        //         javid : 'from pakistan',
+        //         shahzeed : ' from kpd'
+        //     }
+        // }
+        // // var name2 = Object.assign({},name1);
+        // // number 2
+        // var name2 = {...name1};
+        // name2.name= 'javid' ;
+        // name1.adress.shahzeed= ' apganistan'
+        // console.log(name2.name);
+        // console.log(name1.adress.shahzeed);
+
+        // try your self agian agian shallow copy 
+        // var pakistan = {
+        //     provinces: 'kpk and panjab',
+        //     territories:{
+        //         city : ' shewa village',
+        //         village:'shewa'
+        //     }
+
+        // }
+        // // var pakistna2 = Object.assign({},pakistan);
+        // var pakistan2 = {...pakistan}
+        // pakistan2.provinces= 'sind and baluchistan';
+        // pakistan.territories.city= 'he is not pakisatni';
+        // pakistan.provinces="i'm pakistani"
+        //  console.log(pakistan.provinces);
+        //  console.log(pakistan2.provinces);
+        //  console.log(pakistan.territories.city);
+
+
+        //this is a deep copy
+
+
+        var apganistan = {
+            territoriesA: 'kpk and panjab',
+            //  provincesA:{
+            //     city : ' shewa village',
+            //     village:'shewa'
+            // }
+            provincesA: function () {
+               
+            }
+
+        }
+        // var pakistna2 = Object.assign({},apganistan);
+        // var apganistan2 = JSON.parse(JSON.stringify(apganistan));
+        var apganistan2 = _.cloneDeep(apganistan);
+            apganistan2.territoriesA = 'sind and baluchistan';
+        apganistan.provincesA.city = 'he is not apganistani';
+        apganistan.territoriesA = "i'm apgani"
+        console.log(apganistan2);
+        // console.log(apganistan2.territoriesA);
+        // console.log(apganistan.territoriesA);
+        // console.log(apganistan2.provincesA.city);
+    </script>
+</body>
+
+</html>

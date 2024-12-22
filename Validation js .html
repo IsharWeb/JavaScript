@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation js</title>
+</head>
+<body>
+    <h2>HOw to use Validation Method in JavaScript
+    </h2>
+    <input type="number" id="inputid" min="100" max="200" required>
+    <button onclick="myfu()">Ok</button>
+    <p>Enter a Number Between 100 and 200</p>
+    <div id="mydiv"></div>
+    <hr>
+
+    <h2>Example 2 with rangeOverflow</h2>
+    <input type="number" min="1" max="50" id="inpid">
+    <button type="button" onclick="myfu2()">Ok</button>
+    <br>
+    <div id="id2"></div>
+    <script>
+        function myfu() {
+            const myinp1 = document.getElementById("inputid");
+            if (!myinp1.checkValidity()) {
+               document.getElementById('mydiv').innerHTML = myinp1.validationMessage;
+
+            } else {
+                document.getElementById('mydiv').innerHTML = 'INPUT IS OK';
+            }
+        }
+
+        function myfu2() {
+            let text;
+            if (document.getElementById("inpid").validity.rangeOverflow) {
+                text = 'value is LONGE <br>';
+            } else if(document.getElementById("inpid").validity.rangeUnderflow) {
+                text = 'value is LESS <br>';
+            } else {
+                text = 'Input is Ok <br>';            }
+            document.getElementById("id2").innerHTML = text;
+        }
+
+      
+    </script>
+</body>
+</html>

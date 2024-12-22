@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting Js</title>
+</head>
+<body>
+    <h3>How to use Hosting in Javascript</h3>
+    <div id="hosting"></div> 
+    <div id="lett"></div>
+    <div id="initialize"></div>
+    <script>
+        // var num; // Declare num
+        num = 10; // Assign 5 to num
+        Elem = document.getElementById("hosting"); Elem.innerHTML = num;
+         
+        var num; // Declare num
+
+
+        // With let, you cannot use a variable before it is declared.
+        try {
+  carName = "Saab";
+  let carName = "Volvo";
+}
+catch(err) {
+  document.getElementById("lett").innerHTML = err;
+  console.log(err)
+}
+
+
+var a = 3;
+var b = 4;
+
+Elem = document.getElementById('initialize');
+Elem.innerHTML = a + " " + b ;
+
+// Example 
+//var b = 4 ; // b is undefine
+    </script>
+</body>
+</html>

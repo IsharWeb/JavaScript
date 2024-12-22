@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope {}</title>
+</head>
+
+<body>
+    <h2>How to use scope Method in Javascript</h2>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="glo"></div>
+    <div id="glo2"></div>
+    <div id="defined"></div>
+    <div id="undefined"></div>
+    <script>
+        myscope();
+        function myscope(params) {
+            let myname = "Ishar";
+            document.getElementById('one').innerHTML = "typeof : " + typeof myname + " " + myname;
+            console.log("typeof : " + typeof myname + " " + myname);
+
+        }
+        document.getElementById('two').innerHTML = "typeof : " + typeof myname;
+        console.log("typeof : " + typeof myname); // UND
+
+        // Globol
+        let global = "Global";
+        myGlobal()
+        function myGlobal() {
+            document.getElementById('glo').innerHTML = "This is a : " + global;
+            console.log("This is a : " + global)
+        }
+
+
+        // Example 2
+        myFunction();
+        // code here can use carName as a global variable
+        document.getElementById("glo2").innerHTML = "I can display " + carName;
+        console.log("This is a : " + carName);
+        function myFunction() {
+            carName = "Volvo";
+        }
+
+        // var
+
+
+        var carName1 = "Volvo";
+
+        // code here can use window.carName
+        document.getElementById("defined").innerHTML = "I am a Var : " + window.carName1;
+
+        console.log("I am a Var : " + window.carName1);
+        // let
+
+
+        let carName2 = "Volvo";
+
+        // code here can not use window.carName
+        document.getElementById("undefined").innerHTML = "I am a Let : " + window.carName2;
+        console.log("I am a Let : " + window.carName2);
+    </script>
+</body>
+
+</html>

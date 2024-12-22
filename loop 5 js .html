@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop js 5 </title>
+</head>
+
+<body>
+
+    <h2>JavaScript let</h2>
+    <p>In the first example, using var, the variable declared in the loop redeclares the variable outside the loop.
+        <br>
+        In the second example, using let, the variable declared in the loop does not redeclare the variable outside the
+        loop.
+        <br>
+        When let is used to declare the i variable in a loop, the i variable will only be visible within the loop.
+    </p>
+
+    <p id="demo"></p>
+
+    <script>
+        // var and let
+        var i = 5;
+        let n = 5;
+        for (let n = 0; n < 10; n++) {
+            //let
+        }
+        for (var i = 0; i < 10; i++) {
+            // ver
+        }
+
+        document.getElementById("demo").innerHTML = i + "<br>" + n;
+    </script>
+</body>
+
+</html>

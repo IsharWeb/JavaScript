@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow & This</title>
+</head>
+
+<body>
+    <h3>How to use (THIS) keyword in Javascript</h3>
+    <p>This example demonstrate that in Arrow Functions, the "this" keyword represents the object that owns the
+        function, no matter who calls the function.</p>
+
+    <p>Click the button to execute the "hello" function again, and you will see that "this" still represents the window
+        object.</p>
+    <button type="button" id="butt">Click me</button>
+    <div id="thi"></div>
+    <br>
+    <hr>
+    <br>
+    <button type="button" id="butt2">Click me</button>
+    <div id="thi2"></div>
+    <script>
+        let butto = " ";
+        butto = () => {
+            document.getElementById('thi').innerHTML += this;
+        }
+        //The window object calls the function:
+        window.addEventListener("thi", butto);
+
+        //A button object calls the function:
+        document.getElementById("butt").addEventListener("click", butto);
+
+        // Exaple Number 2
+        let button = '';
+        button = function () {
+            document.getElementById('thi2').innerHTML += this;
+        }
+        window.addEventListener('thi2', button);
+        document.getElementById("butt2").addEventListener("click", button);
+
+
+
+    </script>
+
+</body>
+
+</html>

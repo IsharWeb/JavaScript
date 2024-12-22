@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obj Method</title>
+</head>
+<body>
+    <h2>How to use Obj Method in JavaScript</h2>
+    <script>
+    const obj1 = {
+        name : 'Ishar',// not show
+        rollNO : 869,
+        Sub:'Computer'
+    }
+    const at = {
+        name : 'Ishar-Developer', // show me last name
+        email : 'isharkhan601@gmail.com',
+        address:'Pk swabi'
+    }
+
+
+    // all change
+    let obj2 = obj1;
+    obj2.name = 'ishar khan'
+
+    
+     // self change  assing() Method
+    let obj3 = Object.assign({} , obj1 ,at);
+    obj3.name = 'Muhammad Ishar'
+
+    console.log(obj1);
+    console.log(obj2);
+    console.log(at);
+    console.log(obj3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON JS</title>
+</head>
+
+<body>
+    <h3>How to use JSON Method in JavaScrit</h3>
+    <script>
+        const Im = {
+            myname: 'Ishar',
+            course: 'Javascript',
+            country: 'Pakistan',
+            rollNO: 233
+        }
+        console.log(Im.myname)
+        const { course: c } = Im
+        console.log(c)
+
+
+        // React Example
+
+        // // const nav = ({compny}) =>{
+        // }
+        // nav(compny = "ishar");
+
+        let text = '{"employees":[' +
+            '{"firstName":"John","lastName":"Doe" },' +
+            '{"firstName":"Muhammad","lastName":"Ishar" },' +
+            '{"firstName":"Peter","lastName":"Jones" }]}';
+
+        const obj = JSON.parse(text);
+        console.log(
+            obj.employees[1].firstName + " " + obj.employees[1].lastName
+        )
+    </script>
+</body>
+
+</html>

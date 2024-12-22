@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gropic 2</title>
+</head>
+
+<body>
+    <h2>How to use gropic in javascript</h2>
+    <canvas id="mycan" width="400" height="400" style="border:1px solid grey"></canvas>
+
+    <script>
+        const canvas = document.getElementById('mycan');
+        const ctx = canvas.getContext('2d');
+        canvas.heigth = canvas.width;
+        ctx.transform(1, 0, 0, -1, 0, canvas.height);
+        let xmax = canvas.height;
+        let slope = 1.2;
+        let inc = 70;
+        ctx.moveTo(0, inc);
+        ctx.lineTo(xmax, myfu((xmax)));
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+
+        function myfu(x) {
+            return x * slope + inc;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boolean</title>
+</head>
+
+<body>
+    <h1>boolean method in js </h1>
+    <h3>boolean true or fals </h3>
+    <p id="demo1"></p>
+    <p>Booleans and Boolean objects cannot be safely compared:</p>
+    <p id="demo2"></p>
+    <p>Booleans and Boolean objects cannot be safely compared:</p>
+    <p id="demo"></p>
+    <script>
+        // x is a boolean
+        let x1 = false;
+
+        // y is an object
+        let y1 = new Boolean(false);
+
+        document.getElementById("demo1").innerHTML = typeof x1 + "<br>" + typeof y1;
+
+        let x = false;
+        // x is a boolean
+        let y = new Boolean(false);
+        // y is an object
+        document.getElementById("demo2").innerHTML = (x == y);
+
+
+        // false  becuse that is objict and boolean
+        // let x = false; 
+        // x is a Boolean
+        //let y = new Boolean(false); 
+        // y is an object
+        //document.getElementById("demo2").innerHTML = (x===y);
+
+
+        //that is false
+        //becuse Booleans and Boolean objects cannot be safely compared.
+
+
+        //const x = new Boolean(false);
+        //const y = new Boolean(false);
+        //document.getElementById("demo2").innerHTML = (x===y);
+
+        //that all value in js rtue
+        document.getElementById("demo").innerHTML =
+            "100 is " + Boolean(100) + "<br>" +
+            "3.14 is " + Boolean(3.14) + "<br>" +
+            "-15 is " + Boolean(-15) + "<br>" +
+            "Any (not empty) string is " + Boolean("Hello") + "<br>" +
+            "Even the string 'false' is " + Boolean('false') + "<br>" +
+            "Any expression (except zero) is " + Boolean(1 + 7 + 3.14);
+// that all false
+//The Boolean value of 0 or -0 (zero) is false
+//The Boolean value of "" (empty string) is false
+//The Boolean value of undefined is false
+//The Boolean value of null is false
+//The Boolean value of false is (you guessed it) false
+//The Boolean value of NaN is false
+
+    </script>
+</body>
+
+</html>

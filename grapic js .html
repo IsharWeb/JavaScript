@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript gropic</title>
+</head>
+
+<body>
+    <canvas id="myid" width="400" height="400" style="border: 2px solid black;"></canvas>
+    <script>
+        const can = document.getElementById('myid');
+        const ctext = can.getContext('2d');
+        can.height = can.width;
+        ctext.transform(1, 0, 0, -1, 0, can.height)
+        const xarr = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        const yarr = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+        ctext.fillStyle = 'red';
+        for (let i = 0; i < xarr.length - 1; i++) {
+            let x = xarr[i] * 400 / 150;
+            let y = yarr[i] * 400 / 15;
+            ctext.beginPath();
+            ctext.ellipse(x, y, 3, 30, 0, 0, Math.PI);
+            ctext.fill();
+        }
+    </script>
+</body>
+
+</html>

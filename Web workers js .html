@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker API</title>
+</head>
+<body>
+    <p><output id="result">0</output></p>
+    <button type="button" onclick="start()">Start</button>
+    <button type="button" onclick="stop()">Stop</button>
+
+    <script>
+        let worker;
+
+        function start() {
+            if (!worker) {
+                // Create a new worker using a Blob
+                var workerScript = `
+                    let count = 0;
+                    function incrementCount() {
+                        count++;
+                        postMessage(count);
+                        setTimeout(incrementCount, 1000); // Call incrementCount every second
+                    }
+                    incrementCount(); // Start counting immediately
+                `;
+
+                var blob = new Blob([workerScript], { type: "application/javascript" });
+                worker = new Worker(URL.createObjectURL(blob));
+
+                worker.onmessage = function(event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            }
+        }
+
+        function stop() {
+            if (worker) {
+                worker.terminate();
+                worker = null; // Clear the worker variable
+                document.getElementById("result").innerHTML = "0"; // Reset the counter display
+            }
+        }
+    </script>
+</body>
+</html>

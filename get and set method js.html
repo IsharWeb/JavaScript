@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Date get methods</h1>
+    <h3>
+        Method Description <br>
+        getFullYear() Get year as a four digit number (yyyy) <br>
+        getMonth() Get month as a number (0-11) <br>
+        getDate() Get day as a number (1-31) <br>
+        getDay() Get weekday as a number (0-6) <br>
+        getHours() Get hour (0-23) <br>
+        getMinutes() Get minute (0-59) <br>
+        getSeconds() Get second (0-59) <br>
+        getMilliseconds() Get millisecond (0-999) <br>
+        getTime() Get time (milliseconds since January 1, 1970) <br>
+    </h3>
+    <h1>set Date methods
+    </h1>
+    <h3>
+        Method Description <br>
+        setDate() Set the day as a number (1-31) <br>
+        setFullYear() Set the year (optionally month and day) <br>
+        setHours() Set the hour (0-23) <br>
+        setMilliseconds() Set the milliseconds (0-999) <br>
+        setMinutes() Set the minutes (0-59) <br>
+        setMonth() Set the month (0-11) <br>
+        setSeconds() Set the seconds (0-59) <br>
+        setTime() Set the time (milliseconds since January 1, 1970) <br>
+    </h3>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+        //GET METHOD
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const d = new Date("2021-03-25");
+        let month = months[d.getMonth()];
+        //SET METHOD
+        const d3 = new Date();
+        d3.setDate(23);
+        document.getElementById("demo").innerHTML = month;
+        document.getElementById("demo2").innerHTML = d3;
+    </script>
+</body>
+
+</html>
