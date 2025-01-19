@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promis in Js</title>
+</head>
+
+<body>
+
+    <button type="button" id="btn" onclick="">Click Me resolve</button>
+    <button type="button" id="btnreject" onclick="">Click Me reject</button>
+
+
+    <script>
+
+        let resolvePromise = document.getElementById('btn');
+        let rejectPromise = document.getElementById('btnreject');
+
+
+        let myPromise = new Promise((resolve, reject) => {
+
+            resolvePromise.addEventListener("click", () => {
+
+                resolve('I click the Button to Promise Resovle')
+
+            })
+
+            rejectPromise.addEventListener("click", () => {
+
+                reject('I click the Button to Plromise Rejected')
+
+            })
+
+        })
+        myPromise
+        .then(res => console.log( res ))
+        .catch(error => console.log( error ))
+        
+        console.log(myPromise);
+        console.log(resolvePromise);
+        console.log(rejectPromise);
+
+        async function myfun(res, rej) {
+            
+            await myPromise
+            return res 
+            
+        }
+        let ans =  myfun('hellow hy')
+        console.log(ans);
+        
+
+    </script>
+</body>
+
+</html>

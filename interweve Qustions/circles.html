@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles</title>
+
+    <style>
+        body {
+
+            background: #000;
+            color: white;
+
+        }
+
+        .cercle {
+            border: blue 2px solid;
+            position: absolute;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <p>Create a semple function when i click to create a circle if i click again to create in another cercle when i click i gain to remove all</p> -->
+
+    <script>
+
+        document.addEventListener("click", function createCercleFunction(event) {
+
+            // add chlieds
+            let createCercle = document.createElement("div");
+
+            let x = event.clientX;
+            let y = event.clientY;
+
+            //  console.log(`X = ${x} Y = ${y}`);
+
+            createCercle.classList.add("cercle")
+            // createCercle.setAttribute("class", "cercle")
+
+            let heigthAndWithd = Math.floor(Math.random() * 170) + 15;
+            let radius = '90' // Math.floor(Math.random() * 60) + 10
+          //  if (radius < 25) radius = 70 || 36 || 40;
+            if (heigthAndWithd < 70) heigthAndWithd = 120 || 516 || 190;
+        
+
+            // console.log(radius);
+
+            createCercle.style.top = y - 50 + "px";
+            createCercle.style.left = x - 50 + "px";
+            createCercle.style.height = heigthAndWithd*2 + "px";
+            createCercle.style.width = heigthAndWithd*2 + "px";
+            createCercle.style.borderRadius = radius + "%";
+           // createCercle.style.border = "2px solid white";
+
+            document.body.appendChild(createCercle)
+
+            let totalCercls = document.querySelectorAll(".cercle")
+          //  console.log(totalCercls);
+
+            if (totalCercls.length === 4) {
+
+                totalCercls.forEach(cer => {
+
+                   // console.log(cer);
+
+                    document.body.removeChild(cer)
+
+
+                })
+            }
+
+            //   console.log(createCercle);
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>

